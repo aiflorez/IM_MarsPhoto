@@ -24,9 +24,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.android.marsphotos.databinding.FragmentOverviewBinding
 
-/**
- * This fragment shows the the status of the Mars photos web services transaction.
- */
 class OverviewFragment : Fragment() {
 
     private val viewModel: OverviewViewModel by viewModels()
@@ -46,6 +43,8 @@ class OverviewFragment : Fragment() {
 
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = viewModel
+
+        binding.photosGrid.adapter = PhotoGridAdapter()
 
         return binding.root
     }
